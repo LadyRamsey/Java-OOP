@@ -1,0 +1,24 @@
+package com.gmail.gunkophotos;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Triangle triangleOne = new Triangle();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Input sice of side A");
+		triangleOne.setSideA(sc.nextDouble());
+		System.out.println("Input sice of side B");
+		triangleOne.setSideB(sc.nextDouble());
+		System.out.println("Input sice of side C");
+		triangleOne.setSideC(sc.nextDouble());
+		
+		System.out.println(triangleOne.toString());
+		System.out.println("The squere of your triangle is " + triangleOne.squareoftriangle());
+		
+	}
+
+}

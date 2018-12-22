@@ -16,9 +16,12 @@ public class Main {
 		System.out.println("Input sice of side C");
 		triangleOne.setSideC(sc.nextDouble());
 		
+		Triangle triangleTwo = new Triangle(6,9.5,8.7);
+		
 		System.out.println(triangleOne.toString());
 		System.out.println("The squere of your triangle is " + triangleOne.squareoftriangle());
-		
+		System.out.println();
+		System.out.println("The squere of second triangle is " + triangleTwo.squareoftriangle());
 	}
 
 }

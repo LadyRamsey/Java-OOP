@@ -1,0 +1,50 @@
+package com.gmail.gunkophotos;
+
+public class Student extends Man {
+	private int numberRecordBook;
+	private int nummberOfGroup;
+	private String department;
+
+	public Student(int numberRecordBook, int nummberOfGroup, String department) {
+		super();
+		this.numberRecordBook = numberRecordBook;
+		this.nummberOfGroup = nummberOfGroup;
+		this.department = department;
+	}
+
+	public Student() {
+		super();
+	}
+
+	public int getNumberRecordBook() {
+		return numberRecordBook;
+	}
+
+	public void setNumberRecordBook(int numberRecordBook) {
+		this.numberRecordBook = numberRecordBook;
+	}
+
+	public int getNummberOfGroup() {
+		return nummberOfGroup;
+	}
+
+	public void setNummberOfGroup(int nummberOfGroup) {
+		this.nummberOfGroup = nummberOfGroup;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [" + super.toString() + "numberRecordBook=" + numberRecordBook + ", nummberOfGroup=" + nummberOfGroup + ", department="
+				+ department + "]";
+	}
+
+
+}

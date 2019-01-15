@@ -1,0 +1,48 @@
+package com.gmail.gunkophotos;
+
+public class Circle extends Shape {
+	private Point pointOfCenter;
+	private Point pointTwo;
+
+	public Circle(Point pointcenter, Point pointtwo) {
+		super();
+		this.pointOfCenter = pointcenter;
+		this.pointTwo = pointtwo;
+	}
+
+	public Circle() {
+		super();
+	}
+
+	public Point getPointcenter() {
+		return pointOfCenter;
+	}
+
+	public void setPointcenter(Point pointcenter) {
+		this.pointOfCenter = pointcenter;
+	}
+
+	public Point getPointtwo() {
+		return pointTwo;
+	}
+
+	public void setPointtwo(Point pointtwo) {
+		this.pointTwo = pointtwo;
+	}
+
+	@Override
+	public String toString() {
+		return "Circle [pointOfCenter=" + pointOfCenter + ", pointTwo=" + pointTwo + "]";
+	}
+
+	@Override
+	double getPerimetr() {
+		return 2 * Math.PI * Point.lenghSide(pointOfCenter, pointTwo);
+	}
+
+	@Override
+	double getArea() {
+		return Math.PI * Math.pow(Point.lenghSide(pointOfCenter, pointTwo), 2);
+	}
+
+}

@@ -1,27 +1,35 @@
 package com.gmail.gunkophotos;
 
-import java.util.Scanner;
-
 public class Main {
 
 	public static void main(String[] args) {
-		Triangle triangleOne = new Triangle();
 		
-		Scanner sc = new Scanner(System.in);
+		Point cA = new Point(4, 4);
+		Point cB = new Point(7, 2);
 		
-		System.out.println("Input sice of side A");
-		triangleOne.setSideA(sc.nextDouble());
-		System.out.println("Input sice of side B");
-		triangleOne.setSideB(sc.nextDouble());
-		System.out.println("Input sice of side C");
-		triangleOne.setSideC(sc.nextDouble());
+		Circle circleOne = new Circle(cA, cB);
 		
-		Triangle triangleTwo = new Triangle(6,9.5,8.7);
+		System.out.println("The perimetr of circle is " + circleOne.getPerimetr());
+		System.out.println("The area of circle is " + circleOne.getArea());
 		
-		System.out.println(triangleOne.toString());
-		System.out.println("The squere of your triangle is " + triangleOne.squareoftriangle());
-		System.out.println();
-		System.out.println("The squere of second triangle is " + triangleTwo.squareoftriangle());
+		Point tA = new Point(8,2);
+		Point tB = new Point(5,8);
+		Point tC = new Point(2,4);
+		
+		Triangle triangleOne = new Triangle(tA,tB,tC);
+		
+		System.out.println("The perimetr of triangle is " + triangleOne.getPerimetr());
+		System.out.println("The area of triangle is " + triangleOne.getArea());
+		
+		Point rA = new Point(2,2);
+		Point rB = new Point(2,5);
+		Point rC = new Point(7,5);
+		Point rD = new Point(7,2);
+		
+		Rectangle rectOne = new Rectangle(rA,rB,rC,rD);
+		
+		System.out.println("The perimetr of rectangle is " + rectOne.getPerimetr());
+		System.out.println("The area of rectangle is " + rectOne.getArea());
 	}
 
 }

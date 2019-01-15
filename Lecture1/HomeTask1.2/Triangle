@@ -1,53 +1,60 @@
-package com.gmail.gunkophotos;
+public class Triangle extends Shape {
+	private Point pointOne;
+	private Point pointTwo;
+	private Point pointThree;
 
-public class Triangle {
-	private double sideA;
-	private double sideB;
-	private double sideC;
-
-	public Triangle(double sideA, double sideB, double sideC) {
+	public Triangle(Point pointOne, Point pointTwo, Point pointThree) {
 		super();
-		this.sideA = sideA;
-		this.sideB = sideB;
-		this.sideC = sideC;
+		this.pointOne = pointOne;
+		this.pointTwo = pointTwo;
+		this.pointThree = pointThree;
 	}
 
 	public Triangle() {
 		super();
 	}
 
-	public double getSideA() {
-		return sideA;
+	public Point getPointOne() {
+		return pointOne;
 	}
 
-	public void setSideA(double sideA) {
-		this.sideA = sideA;
+	public void setPointOne(Point pointOne) {
+		this.pointOne = pointOne;
 	}
 
-	public double getSideB() {
-		return sideB;
+	public Point getPointTwo() {
+		return pointTwo;
 	}
 
-	public void setSideB(double sideB) {
-		this.sideB = sideB;
+	public void setPointTwo(Point pointTwo) {
+		this.pointTwo = pointTwo;
 	}
 
-	public double getSideC() {
-		return sideC;
+	public Point getPointThree() {
+		return pointThree;
 	}
 
-	public void setSideC(double sideC) {
-		this.sideC = sideC;
+	public void setPointThree(Point pointThree) {
+		this.pointThree = pointThree;
 	}
 
 	@Override
 	public String toString() {
-		return "Triangle [sideA=" + sideA + ", sideB=" + sideB + ", sideC=" + sideC + "]";
+		return "Triangle [pointOne=" + pointOne + ", pointTwo=" + pointTwo + ", pointThree=" + pointThree + "]";
 	}
 
-	public double squareoftriangle() {
-		double polP = (sideA + sideB + sideC) / 2;
-		double s = Math.sqrt(polP * (polP - sideA) * (polP - sideB) * (polP - sideC));
-		return s;
+	@Override
+	double getPerimetr() {
+		return Point.lenghSide(pointOne, pointTwo) + Point.lenghSide(pointTwo, pointThree)
+				+ Point.lenghSide(pointThree, pointOne);
 	}
+
+	@Override
+	double getArea() {
+		double polP = (Point.lenghSide(pointOne, pointTwo) + Point.lenghSide(pointTwo, pointThree)
+				+ Point.lenghSide(pointThree, pointOne)) / 2;
+		return Math.sqrt(polP * (polP - Point.lenghSide(pointOne, pointTwo))
+				* (polP - Point.lenghSide(pointTwo, pointThree)) * (polP - Point.lenghSide(pointThree, pointOne)));
+	}
+
 }

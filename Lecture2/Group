@@ -1,0 +1,73 @@
+package com.gmail.gunkophotos;
+
+import java.util.Arrays;
+
+import javax.swing.plaf.IconUIResource;
+import com.gmail.gunkophotos.exeption.IncorrectNumberOfStudentExeption;
+
+public class Group {
+	private Student group[] = new Student[10];
+	private int numberOfGroup;
+
+	public Group(Student[] group, int numberOfGroup) {
+		super();
+		this.group = group;
+		this.numberOfGroup = numberOfGroup;
+	}
+
+	public Group() {
+		super();
+	}
+
+	public Student[] getGroup() {
+		return group;
+	}
+
+	public void setGroup(Student[] group) {
+		this.group = group;
+	}
+
+	public int getNumberOfGroup() {
+		return numberOfGroup;
+	}
+
+	public void setNumberOfStudent(int numberOfGroup) {
+		this.numberOfGroup = numberOfGroup;
+	}
+
+	@Override
+	public String toString() {
+		return "Group [group=" + Arrays.toString(group) + ", numberOfGroup=" + numberOfGroup + "]";
+	}
+
+	public void addStudent(Student student) {
+		try {
+			for (int i = 0; i <= group.length; i++) {
+				if (group[i] == null) {
+					System.out.println("Input number of record book, nummber of group and name of department.");
+					group[i] = new Student();
+				} else {
+					throw new IncorrectNumberOfStudentExeption();
+				}
+			}
+		} catch (IncorrectNumberOfStudentExeption e) {
+			System.out.println("Incirrect number");
+		}
+	}
+
+	public void deleteStudent(int numberRecordBook) {
+		if (numberRecordBook >= 10000 && numberRecordBook <= 99999) {
+			for (int i = 0; i < group.length; i++) {
+				if (group[i].getNumberRecordBook() == numberRecordBook) {
+					group[i] = null;
+				}else {
+					System.out.println("There is no student with such number of record book.");
+				}
+			}
+		} else {
+			System.out.println("Incorect number of record book.");
+		}
+
+	}		
+  
+}

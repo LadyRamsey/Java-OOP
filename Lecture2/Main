@@ -1,0 +1,37 @@
+package com.gmail.gunkophotos;
+
+import java.util.Arrays;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Student[] group401 = new Student[10];
+
+		Student studentOne = new Student("Sasha", "Play", 17, true, 44321, 401, "Filology");
+		Student studentTwo = new Student("Max", "Gordon", 19, false, 44322, 401, "Filology");
+		Student studentThree = new Student("Olya", "Hutor", 18, true, 44323, 401, "Filology");
+		Student studentFour = new Student("Nadya", "Toys", 19, true, 44324, 401, "Filology");
+		Student studentFive = new Student("Pasha", "Danevich", 18, false, 44325, 401, "Filology");
+		Student studentSix = new Student("Kolya", "Kozak", 17, false, 44326, 401, "Filology");
+		Student studentSeven = new Student("Masha", "Kot", 18, true, 44327, 401, "Filology");
+		Student studentEight = new Student("Kirill", "Samsonov", 19, false, 44328, 401, "Filology");
+		Student studentNine = new Student("Naya", "Hilton", 16, true, 44329, 401, "Filology");
+		Student studentTen = new Student("Tasya", "Voloshko", 17, true, 44330, 401, "Filology");
+
+		group401[0] = studentOne;
+		group401[1] = studentTwo;
+		group401[2] = studentThree;
+		group401[3] = studentFour;
+		group401[4] = studentFive;
+		group401[5] = studentSix;
+		group401[6] = studentSeven;
+		group401[7] = studentEight;
+		group401[8] = studentNine;
+		group401[9] = studentTen;
+
+		group401.addStudent(studentOne);
+
+	}
+
+}

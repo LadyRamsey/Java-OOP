@@ -1,23 +1,20 @@
-package com.gmail.gunkophotos;
-
-public class Man {
 	private String name;
 	private String surname;
 	private int dateOfBirth;
-	private int identificationCode;
-	private String seriesOfPassport;
+	private boolean sex;
+
 
 	public Man() {
 		super();
 	}
 
-	public Man(String name, String surname, int dateOfBirth, int identificationCode, String seriesOfPassport) {
+	public Man(String name, String surname, int dateOfBirth, boolean sex) {
 		super();
 		this.name = name;
 		this.surname = surname;
 		this.dateOfBirth = dateOfBirth;
-		this.identificationCode = identificationCode;
-		this.seriesOfPassport = seriesOfPassport;
+		this.sex = sex;
+	
 	}
 
 	public String getName() {
@@ -36,34 +33,25 @@ public class Man {
 		this.surname = surname;
 	}
 
-	public int getDateofbirth() {
+	public int getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateofbirth(int dateOfBirth) {
+	public void setDateOfBirth(int dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public int getIdentificationCode() {
-		return identificationCode;
+	public boolean isSex() {
+		return sex;
 	}
 
-	public void setIdentificationCode(int identificationCode) {
-		this.identificationCode = identificationCode;
-	}
-
-	public String getSeriesOfPassport() {
-		return seriesOfPassport;
-	}
-
-	public void setSeriesOfPassport(String seriesOfPassport) {
-		this.seriesOfPassport = seriesOfPassport;
+	public void setSex(boolean sex) {
+		this.sex = sex;
 	}
 
 	@Override
 	public String toString() {
-		return "Man [name=" + name + ", surname=" + surname + ", dateOfBirth=" + dateOfBirth + ", identificationCode="
-				+ identificationCode + ", seriesOfPassport=" + seriesOfPassport + "]";
+		return "Man [name=" + name + ", surname=" + surname + ", dateOfBirth=" + dateOfBirth + ", sex=" + sex + "]";
 	}
 
 }

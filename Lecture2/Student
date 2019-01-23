@@ -1,11 +1,10 @@
-package com.gmail.gunkophotos;
-
 public class Student extends Man {
 	private int numberRecordBook;
 	private int nummberOfGroup;
 	private String department;
 
-	public Student(int numberRecordBook, int nummberOfGroup, String department) {
+	public Student(String name, String surname, int dateOfBirth, boolean sex, int numberRecordBook, int nummberOfGroup,
+			String department) {
 		super();
 		this.numberRecordBook = numberRecordBook;
 		this.nummberOfGroup = nummberOfGroup;
@@ -42,9 +41,8 @@ public class Student extends Man {
 
 	@Override
 	public String toString() {
-		return "Student [" + super.toString() + "numberRecordBook=" + numberRecordBook + ", nummberOfGroup=" + nummberOfGroup + ", department="
-				+ department + "]";
+		return "Student [" + super.toString() + "numberRecordBook=" + numberRecordBook + ", nummberOfGroup="
+				+ nummberOfGroup + ", department=" + department + "]";
 	}
-
 
 }

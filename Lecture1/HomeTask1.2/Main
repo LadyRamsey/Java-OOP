@@ -1,35 +1,74 @@
 package com.gmail.gunkophotos;
 
-public class Main {
+import java.util.Arrays;
+import java.util.Formatter;
 
-	public static void main(String[] args) {
+public class Board {
+	private Shape[] board = new Shape[4];
+	Formatter form = new Formatter();
+	
+	public Board(Shape[] board) {
+		super();
+		this.board = board;
+	}
+
+	public Board() {
+		super();
+	}
+
+	public Shape[] getBoard() {
+		return board;
+	}
+
+	public void setBoard(Shape[] board) {
+		this.board = board;
+	}
+
+	public void addFigure(Shape a, int b) {
+		if (a != null && b != 0) {
+			if (board[b] == null) {
+				board[b] = a;
+				System.out.println("The figure added successfully to section " + b + "!");
+			} else {
+				System.out.println("The figure cant be added because there is no space on section " + b + "!");
+			}
+		}
+	}
+
+	public void deleteFigure(int a) {
+		if (a - 1 >= 0 && a - 1 <= 4) {
+			if (board[a] == null) {
+				System.out.println("There is no any figure on this section.");
+			} else {
+				board[a] = null;
+				System.out.println("The figure delete successfully from section" + a + "!");
+
+			}
+		}
+	}
+
+	public String allPerimetrs() {
+		double a = 0;
+		for(int i = 0; i<board.length;i++) {
+				if(board[i]!=null) {
+					a = a + board[i].getPerimetr();
+				}
+			}
 		
-		Point cA = new Point(4, 4);
-		Point cB = new Point(7, 2);
+		return "Perimetr of all shapes is " + a;
 		
-		Circle circleOne = new Circle(cA, cB);
-		
-		System.out.println("The perimetr of circle is " + circleOne.getPerimetr());
-		System.out.println("The area of circle is " + circleOne.getArea());
-		
-		Point tA = new Point(8,2);
-		Point tB = new Point(5,8);
-		Point tC = new Point(2,4);
-		
-		Triangle triangleOne = new Triangle(tA,tB,tC);
-		
-		System.out.println("The perimetr of triangle is " + triangleOne.getPerimetr());
-		System.out.println("The area of triangle is " + triangleOne.getArea());
-		
-		Point rA = new Point(2,2);
-		Point rB = new Point(2,5);
-		Point rC = new Point(7,5);
-		Point rD = new Point(7,2);
-		
-		Rectangle rectOne = new Rectangle(rA,rB,rC,rD);
-		
-		System.out.println("The perimetr of rectangle is " + rectOne.getPerimetr());
-		System.out.println("The area of rectangle is " + rectOne.getArea());
+		}
+	
+	@Override
+	public String toString() {
+		double a = 0;
+		for (int i = 0; i < board.length; i++) {
+			if (board[i] != null) {
+				a = a + board[i].getPerimetr();
+			}
+		}
+		return "Board [board=" + Arrays.toString(board) + "]" + "\r\n" + "Perimetr of all shapes is "
+				+ form.format("%.3f", a) + ".";
 	}
 
 }

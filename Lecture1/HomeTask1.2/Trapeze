@@ -1,0 +1,76 @@
+package com.gmail.gunkophotos;
+
+public class Trapeze extends Shape {
+	private Point pointOne;
+	private Point pointTwo;
+	private Point pointThree;
+	private Point pointFour;
+
+	public Trapeze(Point pointOne, Point pointTwo, Point pointThree, Point pointFour) {
+		super();
+		this.pointOne = pointOne;
+		this.pointTwo = pointTwo;
+		this.pointThree = pointThree;
+		this.pointFour = pointFour;
+	}
+
+	public Trapeze() {
+		super();
+	}
+
+	public Point getPointOne() {
+		return pointOne;
+	}
+
+	public void setPointOne(Point pointOne) {
+		this.pointOne = pointOne;
+	}
+
+	public Point getPointTwo() {
+		return pointTwo;
+	}
+
+	public void setPointTwo(Point pointTwo) {
+		this.pointTwo = pointTwo;
+	}
+
+	public Point getPointThree() {
+		return pointThree;
+	}
+
+	public void setPointThree(Point pointThree) {
+		this.pointThree = pointThree;
+	}
+
+	public Point getPointFour() {
+		return pointFour;
+	}
+
+	public void setPointFour(Point pointFour) {
+		this.pointFour = pointFour;
+	}
+
+	@Override
+	public String toString() {
+		return "Trapeze [pointOne=" + pointOne + ", pointTwo=" + pointTwo + ", pointThree=" + pointThree
+				+ ", pointFour=" + pointFour + "]";
+	}
+
+	@Override
+	double getPerimetr() {
+		return Point.lenghSide(pointOne, pointTwo) + Point.lenghSide(pointTwo, pointThree)
+				+ Point.lenghSide(pointThree, pointFour) + Point.lenghSide(pointFour, pointOne);
+	}
+
+	@Override
+	double getArea() {
+		return ((Point.lenghSide(pointTwo, pointThree) + Point.lenghSide(pointFour, pointOne)) / 2)
+				* Math.sqrt(Math.pow(Point.lenghSide(pointOne, pointTwo), 2) - (Math.pow(
+						(Math.pow((Point.lenghSide(pointTwo, pointThree) - Point.lenghSide(pointFour, pointOne)), 2)
+								+ Math.pow(Point.lenghSide(pointOne, pointTwo), 2)
+								- Math.pow(Point.lenghSide(pointThree, pointFour), 2))
+								/ (2 * (Point.lenghSide(pointFour, pointOne) - Point.lenghSide(pointTwo, pointThree))),
+						2)));
+	}
+
+}

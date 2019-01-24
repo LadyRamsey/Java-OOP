@@ -7,6 +7,7 @@ public class Rectangle extends Shape {
 	private Point pointThree;
 	private Point pointFour;
 
+
 	public Rectangle(Point pointOne, Point pointTwo, Point pointThree, Point pointFour) {
 		super();
 		this.pointOne = pointOne;
@@ -53,14 +54,14 @@ public class Rectangle extends Shape {
 
 	@Override
 	public String toString() {
-		return "Rectangle [pointOne=" + pointOne + ", pointTwo=" + pointTwo + ", pointThree=" + pointThree
-				+ ", pointFour=" + pointFour + "]";
+		return "Rectangle [pointOne=" + pointOne.toString() + ", pointTwo=" + pointTwo.toString() + ", pointThree=" + pointThree.toString()
+				+ ", pointFour=" + pointFour.toString() + "]";
 	}
 
 	@Override
 	double getPerimetr() {
 
-		return 2 * (Point.lenghSide(pointOne, pointTwo) + Point.lenghSide(pointTwo, pointThree));
+		return 2 * (Point.lenghSide(pointTwo,pointOne) + Point.lenghSide(pointThree, pointTwo));
 	}
 
 	@Override

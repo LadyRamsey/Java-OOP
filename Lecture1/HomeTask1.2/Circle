@@ -32,12 +32,12 @@ public class Circle extends Shape {
 
 	@Override
 	public String toString() {
-		return "Circle [pointOfCenter=" + pointOfCenter + ", pointTwo=" + pointTwo + "]";
+		return "Circle [pointOfCenter=" + pointOfCenter.toString() + ", pointTwo=" + pointTwo.toString() + "]";
 	}
 
 	@Override
 	double getPerimetr() {
-		return 2 * Math.PI * Point.lenghSide(pointOfCenter, pointTwo);
+		return 2 * Math.PI * Point.lenghSide(pointTwo, pointOfCenter);
 	}
 
 	@Override

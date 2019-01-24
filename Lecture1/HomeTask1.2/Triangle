@@ -1,3 +1,5 @@
+package com.gmail.gunkophotos;
+
 public class Triangle extends Shape {
 	private Point pointOne;
 	private Point pointTwo;
@@ -40,7 +42,8 @@ public class Triangle extends Shape {
 
 	@Override
 	public String toString() {
-		return "Triangle [pointOne=" + pointOne + ", pointTwo=" + pointTwo + ", pointThree=" + pointThree + "]";
+		return "Triangle [pointOne=" + pointOne.toString() + ", pointTwo=" + pointTwo + ", pointThree=" + pointThree
+				+ "]";
 	}
 
 	@Override
